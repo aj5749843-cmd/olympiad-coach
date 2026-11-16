@@ -1,0 +1,4 @@
+source.html
+*.src.html
+decrypted*.html
+.DS_Store
