@@ -1671,10 +1671,10 @@ gate.innerHTML=`<div class="gbox" role="dialog" aria-modal="true" aria-labelledb
   </aside>
   <div class="gmain">
    <h3>الدخول بالإيميل</h3>
-   <p class="glead">نرسل إلى إيميلك رابط دخول، بلا كلمة مرور.</p>
+   <p class="glead">نرسل إلى إيميلك رابطاً ورمز دخول، بلا كلمة مرور.</p>
    <div id="gstep1"><label for="gemail">إيميلك</label><input id="gemail" type="email" dir="ltr" autocomplete="email" placeholder="name@example.com">
     <button class="btn hx-go" id="gsend" type="button"><span>أرسل رابط الدخول</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
-   <div id="gstep2" hidden><p class="gsent">أرسلنا رسالة إلى <bdi id="gto"></bdi>. افتحها واضغط رابط الدخول، وتأكد من مجلد الرسائل غير المرغوبة. وإذا وصلك رمز من 6 أرقام فاكتبه هنا.</p>
+   <div id="gstep2" hidden><p class="gsent">أرسلنا رسالة إلى <bdi id="gto"></bdi>. افتحها واضغط رابط الدخول، وتأكد من مجلد الرسائل غير المرغوبة. أو انسخ رمز الدخول الذي في الرسالة واكتبه هنا.</p>
     <label for="gcode">رمز الدخول</label><input id="gcode" inputmode="numeric" dir="ltr" autocomplete="one-time-code" maxlength="10" placeholder="••••••">
     <button class="btn hx-go" id="gverify" type="button"><span>دخول</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button> <button class="btn plain sm" id="gback" type="button">تغيير الإيميل</button></div>
    <p class="gmsg" id="gmsg" aria-live="polite"></p>
@@ -1701,7 +1701,7 @@ $("gemail").onkeydown=e=>{if(e.key==="Enter")$("gsend").click();};
 $("gback").onclick=()=>{$("gstep1").hidden=false;$("gstep2").hidden=true;gm("");};
 $("gverify").onclick=async()=>{
   const code=($("gcode").value||"").replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/\D/g,"");
-  if(code.length<6){gm("الرمز من 6 أرقام أو أكثر.");return;}
+  if(code.length<6){gm("اكتب الرمز كما في الرسالة.");return;}
   $("gverify").disabled=true;gm("جارٍ التحقق…");
   const {data,error}=await sb.auth.verifyOtp({email:pendingEmail,token:code,type:"email"});
   $("gverify").disabled=false;
