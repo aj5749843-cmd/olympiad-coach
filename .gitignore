@@ -1,4 +1,6 @@
-source.html
 *.src.html
-decrypted*.html
 .DS_Store
+answers.sql
+decrypted*.html
+keys.json
+source.html
