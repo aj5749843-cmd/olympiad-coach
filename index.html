@@ -1666,15 +1666,15 @@ gate.innerHTML=`<div class="gbox" role="dialog" aria-modal="true" aria-labelledb
    <ul>
     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>تقدمك محفوظ على الجوال والحاسب معاً.</li>
     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>معلمك يتابعك فقط إذا وافقت أنت.</li>
-    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>بلا كلمة مرور: رمز يصل إلى إيميلك.</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>بلا كلمة مرور: رابط يصل إلى إيميلك.</li>
    </ul>
   </aside>
   <div class="gmain">
    <h3>الدخول بالإيميل</h3>
-   <p class="glead">نرسل إليك رمزاً من 6 أرقام.</p>
+   <p class="glead">نرسل إلى إيميلك رابط دخول، بلا كلمة مرور.</p>
    <div id="gstep1"><label for="gemail">إيميلك</label><input id="gemail" type="email" dir="ltr" autocomplete="email" placeholder="name@example.com">
-    <button class="btn hx-go" id="gsend" type="button"><span>أرسل رمز الدخول</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
-   <div id="gstep2" hidden><p class="gsent">أرسلنا رمزاً إلى <bdi id="gto"></bdi>. اكتبه هنا، أو اضغط الرابط في الرسالة.</p>
+    <button class="btn hx-go" id="gsend" type="button"><span>أرسل رابط الدخول</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
+   <div id="gstep2" hidden><p class="gsent">أرسلنا رسالة إلى <bdi id="gto"></bdi>. افتحها واضغط رابط الدخول، وتأكد من مجلد الرسائل غير المرغوبة. وإذا وصلك رمز من 6 أرقام فاكتبه هنا.</p>
     <label for="gcode">رمز الدخول</label><input id="gcode" inputmode="numeric" dir="ltr" autocomplete="one-time-code" maxlength="10" placeholder="••••••">
     <button class="btn hx-go" id="gverify" type="button"><span>دخول</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button> <button class="btn plain sm" id="gback" type="button">تغيير الإيميل</button></div>
    <p class="gmsg" id="gmsg" aria-live="polite"></p>
@@ -1694,7 +1694,7 @@ $("gsend").onclick=async()=>{
   $("gsend").disabled=true;gm("جارٍ الإرسال…");
   const {error}=await sb.auth.signInWithOtp({email:em,options:{shouldCreateUser:true,emailRedirectTo:location.origin+location.pathname}});
   $("gsend").disabled=false;
-  if(error){gm(/rate|limit|seconds/i.test(error.message)?"أُرسلت رسائل كثيرة في وقت قصير. انتظر قليلاً ثم حاول مرة أخرى.":/fetch|network/i.test(error.message)?"تعذّر الاتصال بالخادم. تأكد من الإنترنت، أو تابع كضيف.":"تعذّر الإرسال: "+error.message);return;}
+  if(error){gm(/not.?authorized/i.test(error.message)?"الدخول بالإيميل غير مفعّل لهذا الإيميل بعد. تستطيع المتابعة كضيف.":/rate|limit|seconds/i.test(error.message)?"أُرسلت رسائل كثيرة في وقت قصير. انتظر قليلاً ثم حاول مرة أخرى.":/fetch|network/i.test(error.message)?"تعذّر الاتصال بالخادم. تأكد من الإنترنت، أو تابع كضيف.":"تعذّر الإرسال: "+error.message);return;}
   pendingEmail=em;$("gto").textContent=em;$("gstep1").hidden=true;$("gstep2").hidden=false;gm("");$("gcode").focus();
 };
 $("gemail").onkeydown=e=>{if(e.key==="Enter")$("gsend").click();};
