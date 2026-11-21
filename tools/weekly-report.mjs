@@ -75,7 +75,7 @@ const delta = (a, b) => b === 0 ? (a ? "جديد" : "بلا تغيير") : (a ==
 const e = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
 // ── الزوار من GoatCounter (اختياري: يعمل إذا وُجد GOATCOUNTER_TOKEN) ──
-const day = d => d.toISOString().slice(0, 10);
+const hr = d => { const x = new Date(d); x.setUTCMinutes(0, 0, 0); return x.toISOString().replace(".000Z", "Z"); };
 async function gcGet(p, q) {
   if (mock) return mock.gc?.[p] ?? null;
   const r = await fetch(`${GC_SITE}/api/v0/${p}?${new URLSearchParams(q)}`, { headers: { Authorization: `Bearer ${GC}`, "Content-Type": "application/json" } });
@@ -88,8 +88,11 @@ const project = path => path === "/" ? "الصفحة الرئيسية" : (PRETTY
 let G = null;
 if (GC || mock?.gc) {
   try {
-    const cur = { start: day(w1), end: day(new Date(now - DAY)) }, prev = { start: day(w2), end: day(new Date(w1 - DAY)) };
-    const [tc, tp, hits, refs] = await Promise.all([gcGet("stats/total", cur), gcGet("stats/total", prev), gcGet("stats/hits", { ...cur, limit: 50 }), gcGet("stats/toprefs", { ...cur, limit: 6 })]);
+    const cur = { start: hr(w1), end: hr(now) }, prev = { start: hr(w2), end: hr(w1) };
+    const got = await Promise.allSettled([gcGet("stats/total", cur), gcGet("stats/total", prev), gcGet("stats/hits", { ...cur, limit: 100 }), gcGet("stats/toprefs", { ...cur, limit: 10 })]);
+    got.forEach(g => g.status === "rejected" && console.error(String(g.reason)));
+    if (got.every(g => g.status === "rejected")) throw new Error("goatcounter: كل الطلبات فشلت");
+    const [tc, tp, hits, refs] = got.map(g => g.status === "fulfilled" ? g.value : null);
     const pages = {}, bots = {};
     for (const h of hits?.hits || []) {
       if (h.event || BOTS[h.path]) { if (BOTS[h.path]) bots[BOTS[h.path]] = (bots[BOTS[h.path]] || 0) + h.count; continue; }
