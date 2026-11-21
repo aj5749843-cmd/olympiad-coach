@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تمارين أولمبياد المثلثات | مدرب الأولمبياد</title>
+<meta name="description" content="يتناول المثلثات وخواصها: 11 تمريناً من حقائب نسمو بمستويات متدرجة وتلميحات، لطلاب المرحلة المتوسطة.">
+<link rel="canonical" href="https://aj5749843-cmd.github.io/olympiad-coach/topics/triangles.html">
+<meta name="theme-color" content="#0B827E">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="مدرب الأولمبياد">
+<meta property="og:title" content="تمارين أولمبياد المثلثات | مدرب الأولمبياد">
+<meta property="og:description" content="يتناول المثلثات وخواصها: 11 تمريناً من حقائب نسمو بمستويات متدرجة وتلميحات، لطلاب المرحلة المتوسطة.">
+<meta property="og:url" content="https://aj5749843-cmd.github.io/olympiad-coach/topics/triangles.html">
+<meta property="og:image" content="https://aj5749843-cmd.github.io/olympiad-coach/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aj5749843-cmd.github.io/olympiad-coach/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Readex+Pro:wght@600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5F6;--surface:#fff;--ink:#2A3137;--muted:#69737B;--line:#DCE0E4;--tint:#E2F4F3;--brand:#0B827E;--hero:#0C8F8A;--hero-2:#19B3AD;
+--display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#14181B;--surface:#1D2327;--ink:#EEF1F3;--muted:#A2ACB4;--line:#333B42;--tint:#173836;--brand:#3CC8C1;--hero:#0A6460;--hero-2:#0F8782}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.9;font-size:17px}
+a{color:var(--brand)}.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.bar{background:var(--surface);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--brand);display:inline-block}
+.hero{background:linear-gradient(135deg,var(--hero),var(--hero-2));color:#fff;padding:36px 0 30px}
+.hero h1{font-family:var(--display);font-size:clamp(1.6rem,4.5vw,2.3rem);line-height:1.4;margin:6px 0 10px}
+.crumbs{font-size:.88rem;opacity:.9}.crumbs a{color:#fff}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.meta li{background:rgba(255,255,255,.16);border-radius:999px;padding:2px 12px;font-size:.9rem}
+main{padding:28px 0 40px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 18px}
+h2{font-family:var(--display);font-size:1.25rem;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--tint);border-radius:999px;padding:2px 12px;font-size:.92rem}
+.ex{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.ex:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.ex h3{font-family:var(--display);font-size:1.08rem;margin:0 0 4px}
+.lv{font-size:.85rem;color:var(--muted)}
+.ex ol,.ex ul{margin:6px 0;padding-inline-start:26px}
+.src{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.m{font-family:var(--mono);direction:ltr;unicode-bidi:isolate;font-size:.94em}
+table.ftbl{border-collapse:collapse;margin:6px auto;font-family:var(--mono)}
+table.ftbl td,table.ftbl th{border:1.5px solid currentColor;min-width:22px;height:28px;padding:2px 6px;text-align:center;font-size:.9rem}
+table.ftbl.arith td{border:0;font-size:1.15rem;font-weight:700}table.ftbl.arith tr:nth-child(3) td{border-bottom:2px solid currentColor}
+.fig{margin:12px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;place-items:center;overflow-x:auto}
+.fig svg{width:min(100%,300px);height:auto;direction:ltr}
+.fig .s{stroke:var(--ink);stroke-width:2;fill:none}.fig .s.a{stroke:var(--brand)}
+.fig .c{fill:var(--brand);fill-opacity:.1;stroke:var(--brand);stroke-width:2}
+.fig text{fill:var(--ink);font-family:var(--mono);font-size:14px;font-weight:600}.fig .dot{fill:var(--ink)}.fig .grid{stroke:var(--line);stroke-width:1;fill:none}
+.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;padding:12px 26px;border-radius:12px;margin-top:6px}
+.hero .cta{background:#fff;color:var(--hero)}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.list a{display:block;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+.list small{display:block;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:22px 0;font-size:.9rem;color:var(--muted)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"تمارين أولمبياد: المثلثات","description":"يتناول المثلثات وخواصها: مجموع زوايا المثلث، والزاوية الخارجية، والمثلث متطابق الضلعين والمتطابق الأضلاع، والعلاقة بين أضلاع المثلث وزواياه. ومسائل الأولمبياد فيه تتطلب ربط أكثر من خاصية في الشكل الواحد.","url":"https://aj5749843-cmd.github.io/olympiad-coach/topics/triangles.html","inLanguage":"ar","learningResourceType":["تمارين","Practice problems"],"educationalLevel":"المرحلة المتوسطة","teaches":["المثلثات","الزاوية الخارجية = مجموع الداخليتين البعيدتين","التقابل بالرأس ومجموع زوايا المثلث","مجموع زوايا المثلث والزاوية المستقيمة","مجموع الزوايا الخارجية 360°","الزاوية الخارجية","زوايا المثلث المتطابق الأضلاع 60°"],"about":{"@type":"Thing","name":"الهندسة"},"audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"numberOfItems":11,"isBasedOn":{"@type":"CreativeWork","name":"حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني (نسمو)","publisher":{"@type":"Organization","name":"موهبة"}},"isPartOf":{"@type":"WebSite","name":"مدرب الأولمبياد","url":"https://aj5749843-cmd.github.io/olympiad-coach/"},"dateModified":"2026-11-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"مدرب الأولمبياد","item":"https://aj5749843-cmd.github.io/olympiad-coach/"},{"@type":"ListItem","position":2,"name":"المواضيع","item":"https://aj5749843-cmd.github.io/olympiad-coach/topics/"},{"@type":"ListItem","position":3,"name":"المثلثات","item":"https://aj5749843-cmd.github.io/olympiad-coach/topics/triangles.html"}]}</script>
+</head>
+<body>
+<header class="bar"><div class="wrap"><a class="logo" href="../"><i aria-hidden="true"></i>مدرب الأولمبياد</a><a href="./">كل المواضيع</a></div></header>
+<div class="hero"><div class="wrap">
+<nav class="crumbs" aria-label="مسار التنقل"><a href="../">مدرب الأولمبياد</a> › <a href="./">المواضيع</a> › الهندسة</nav>
+<h1>تمارين أولمبياد: المثلثات</h1>
+<ul class="meta"><li>الهندسة</li><li>حقيبتا رياضيات 1 و2 (ناشئين وكبار)</li><li>11 تمريناً</li><li>المرحلة المتوسطة</li></ul>
+<p style="margin:16px 0 0"><a class="cta" href="../?s=geo-tri">ابدأ التدريب على هذا الموضوع</a></p>
+</div></div>
+<main><div class="wrap">
+<section><h2>عن الموضوع</h2><p>يتناول المثلثات وخواصها: مجموع زوايا المثلث، والزاوية الخارجية، والمثلث متطابق الضلعين والمتطابق الأضلاع، والعلاقة بين أضلاع المثلث وزواياه. ومسائل الأولمبياد فيه تتطلب ربط أكثر من خاصية في الشكل الواحد.</p>
+<p>في المنصة 11 تمريناً في هذا الموضوع: 0 في المستوى الأول، و11 في الثاني، و0 تحدياً في الثالث. يحل الطالب على السبورة، ويطلب تلميحاً عند الحاجة، ويُتحقق من إجابته فوراً.</p></section>
+<section><h2>أفكار وطرق تتدرب عليها</h2><ul class="chips"><li>الزاوية الخارجية = مجموع الداخليتين البعيدتين</li><li>التقابل بالرأس ومجموع زوايا المثلث</li><li>مجموع زوايا المثلث والزاوية المستقيمة</li><li>مجموع الزوايا الخارجية 360°</li><li>الزاوية الخارجية</li><li>زوايا المثلث المتطابق الأضلاع 60°</li><li>زاوية السقوط = زاوية الانعكاس</li><li>التناظر ثم زاويتا القاعدة</li><li>التبادل ومجموع زوايا المثلث</li><li>الزاوية الخارجية مرتين</li><li>التقابل بالرأس ثم مجموع زوايا المثلث</li></ul></section>
+<section><h2>أمثلة من الحقيبة</h2>
+<div class="ex">
+<h3>مثلثان متقابلان</h3><div class="lv">المستوى 2 · التقابل بالرأس ومجموع زوايا المثلث</div>
+<p>على الشكل المجاور، أوجد قيمة x.</p>
+<ol type="a"><li><bdi class="m">x</bdi></li></ol>
+
+<figure class="fig"><svg viewBox="538 460 215 150"><path class="s" d="M548 521L742 521"/><path class="s" d="M548 521L622 470"/><path class="s" d="M622 470L677 601"/><path class="s" d="M742 521L677 601"/><text x="613" y="484" font-size="11" text-anchor="middle">80°</text><text x="572" y="516" font-size="11" text-anchor="middle">40°</text><text x="720" y="534" font-size="11" text-anchor="middle">50°</text><text x="678" y="586" font-size="11" text-anchor="middle">x°</text></svg></figure>
+<p class="src">المصدر: حقيبة رياضيات ناشئين – المرحلة الأولى · ص 29 · تدريب 2</p>
+</div>
+<div class="ex">
+<h3>زوايا المثلث الخارجية</h3><div class="lv">المستوى 2 · الزاوية الخارجية = مجموع الداخليتين البعيدتين</div>
+<p>باستخدام الشكل المجاور أكمل:</p>
+<ol type="a"><li>m∠1 = 40°، m∠2 = 60° ⇒ m∠6</li><li>m∠1 = 45°، m∠3 = 70° ⇒ m∠5</li><li>m∠2 = 50°، m∠3 = 65° ⇒ m∠4</li><li>m∠4 = 135°، m∠2 = 60° ⇒ m∠3</li><li>m∠5 = 120°، m∠1 = 40° ⇒ m∠3</li><li><bdi class="m">m∠4 + m∠5 + m∠6</bdi></li></ol>
+
+<figure class="fig"><svg viewBox="45 225 210 130"><path class="s" d="M50 328L248 328"/><path class="s" d="M52 348L168 250"/><path class="s" d="M213 328L152 233"/><text x="98" y="322" font-size="12" text-anchor="middle">1</text><text x="199" y="322" font-size="12" text-anchor="middle">2</text><text x="225" y="322" font-size="12" text-anchor="middle">5</text><text x="163" y="270" font-size="12" text-anchor="middle">3</text><text x="152" y="254" font-size="12" text-anchor="middle">6</text><text x="80" y="343" font-size="12" text-anchor="middle">4</text></svg></figure>
+<p class="src">المصدر: حقيبة رياضيات ناشئين – المرحلة الأولى · ص 29 · تدريب 1</p>
+</div>
+<div class="ex">
+<h3>زاوية عند الرأس A</h3><div class="lv">المستوى 2 · مجموع زوايا المثلث والزاوية المستقيمة</div>
+<p>على الشكل المجاور، أوجد قيمة x.</p>
+<ol type="a"><li><bdi class="m">x</bdi></li></ol>
+
+<figure class="fig"><svg viewBox="55 450 190 128"><path class="s" d="M67 561L232 561"/><path class="s" d="M67 561L120 474"/><path class="s" d="M232 561L98 460"/><path class="s" d="M120 474L170 561"/><text x="103" y="482" font-size="11" text-anchor="middle">75°</text><text x="88" y="554" font-size="11" text-anchor="middle">50°</text><text x="186" y="554" font-size="11" text-anchor="middle">110°</text><text x="147" y="508" font-size="11" text-anchor="middle">x°</text><text x="127" y="470" font-size="13" text-anchor="middle">A</text><text x="62" y="574" font-size="13" text-anchor="middle">C</text><text x="170" y="576" font-size="13" text-anchor="middle">D</text><text x="236" y="574" font-size="13" text-anchor="middle">B</text></svg></figure>
+<p class="src">المصدر: حقيبة رياضيات ناشئين – المرحلة الأولى · ص 29 · تدريب 3</p>
+</div>
+<p style="margin-top:18px"><a class="cta" href="../?s=geo-tri">حلّ هذه التمارين وغيرها في المنصة</a></p>
+<p class="src">الحلول والتلميحات داخل المنصة، ولا تُعرض هنا.</p></section>
+<section><h2>مواضيع أخرى في الهندسة</h2><ul class="list"><li><a href="points-lines-angles.html">النقاط والمستقيمات والزوايا<small>10 تمارين</small></a></li><li><a href="polygons.html">المضلعات<small>تمرينان</small></a></li><li><a href="quadrilaterals.html">الرباعيات<small>8 تمارين</small></a></li><li><a href="triangle-congruence.html">تطابق المثلثات<small>21 تمريناً</small></a></li></ul></section>
+</div></main>
+<footer><div class="wrap">التمارين من حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني «نسمو» المنشورة على موقع موهبة، ويُذكر مصدر كل تمرين تحته. · <a href="../">مدرب الأولمبياد</a> · <a href="./">كل المواضيع</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تمارين أولمبياد تطابق المثلثات | مدرب الأولمبياد</title>
+<meta name="description" content="يتناول تطابق المثلثات وحالاته: 21 تمريناً من حقائب نسمو بمستويات متدرجة وتلميحات، لطلاب المرحلة المتوسطة.">
+<link rel="canonical" href="https://aj5749843-cmd.github.io/olympiad-coach/topics/triangle-congruence.html">
+<meta name="theme-color" content="#0B827E">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="مدرب الأولمبياد">
+<meta property="og:title" content="تمارين أولمبياد تطابق المثلثات | مدرب الأولمبياد">
+<meta property="og:description" content="يتناول تطابق المثلثات وحالاته: 21 تمريناً من حقائب نسمو بمستويات متدرجة وتلميحات، لطلاب المرحلة المتوسطة.">
+<meta property="og:url" content="https://aj5749843-cmd.github.io/olympiad-coach/topics/triangle-congruence.html">
+<meta property="og:image" content="https://aj5749843-cmd.github.io/olympiad-coach/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aj5749843-cmd.github.io/olympiad-coach/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Readex+Pro:wght@600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5F6;--surface:#fff;--ink:#2A3137;--muted:#69737B;--line:#DCE0E4;--tint:#E2F4F3;--brand:#0B827E;--hero:#0C8F8A;--hero-2:#19B3AD;
+--display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#14181B;--surface:#1D2327;--ink:#EEF1F3;--muted:#A2ACB4;--line:#333B42;--tint:#173836;--brand:#3CC8C1;--hero:#0A6460;--hero-2:#0F8782}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.9;font-size:17px}
+a{color:var(--brand)}.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.bar{background:var(--surface);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--brand);display:inline-block}
+.hero{background:linear-gradient(135deg,var(--hero),var(--hero-2));color:#fff;padding:36px 0 30px}
+.hero h1{font-family:var(--display);font-size:clamp(1.6rem,4.5vw,2.3rem);line-height:1.4;margin:6px 0 10px}
+.crumbs{font-size:.88rem;opacity:.9}.crumbs a{color:#fff}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.meta li{background:rgba(255,255,255,.16);border-radius:999px;padding:2px 12px;font-size:.9rem}
+main{padding:28px 0 40px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 18px}
+h2{font-family:var(--display);font-size:1.25rem;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--tint);border-radius:999px;padding:2px 12px;font-size:.92rem}
+.ex{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.ex:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.ex h3{font-family:var(--display);font-size:1.08rem;margin:0 0 4px}
+.lv{font-size:.85rem;color:var(--muted)}
+.ex ol,.ex ul{margin:6px 0;padding-inline-start:26px}
+.src{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.m{font-family:var(--mono);direction:ltr;unicode-bidi:isolate;font-size:.94em}
+table.ftbl{border-collapse:collapse;margin:6px auto;font-family:var(--mono)}
+table.ftbl td,table.ftbl th{border:1.5px solid currentColor;min-width:22px;height:28px;padding:2px 6px;text-align:center;font-size:.9rem}
+table.ftbl.arith td{border:0;font-size:1.15rem;font-weight:700}table.ftbl.arith tr:nth-child(3) td{border-bottom:2px solid currentColor}
+.fig{margin:12px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;place-items:center;overflow-x:auto}
+.fig svg{width:min(100%,300px);height:auto;direction:ltr}
+.fig .s{stroke:var(--ink);stroke-width:2;fill:none}.fig .s.a{stroke:var(--brand)}
+.fig .c{fill:var(--brand);fill-opacity:.1;stroke:var(--brand);stroke-width:2}
+.fig text{fill:var(--ink);font-family:var(--mono);font-size:14px;font-weight:600}.fig .dot{fill:var(--ink)}.fig .grid{stroke:var(--line);stroke-width:1;fill:none}
+.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;padding:12px 26px;border-radius:12px;margin-top:6px}
+.hero .cta{background:#fff;color:var(--hero)}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.list a{display:block;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+.list small{display:block;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:22px 0;font-size:.9rem;color:var(--muted)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"تمارين أولمبياد: تطابق المثلثات","description":"يتناول تطابق المثلثات وحالاته: ضلع ضلع ضلع، وضلع زاوية ضلع، وزاوية ضلع زاوية، ووتر وضلع في المثلث القائم، واستخدام التطابق لإثبات تساوي أطوال وزوايا. وهو من موضوعات حقيبة رياضيات 2 (الكبار).","url":"https://aj5749843-cmd.github.io/olympiad-coach/topics/triangle-congruence.html","inLanguage":"ar","learningResourceType":["تمارين","Practice problems"],"educationalLevel":"المرحلة المتوسطة","teaches":["تطابق المثلثات","التطابق بضلعين وزاوية محصورة (SAS)","حالات التطابق: SAS و ASA و SSS و HS","التطابق: زاوية مشتركة","الوتر وضلع (HS)","تطابق مثلثين","تطابق بضلعين وزاوية محصورة"],"about":{"@type":"Thing","name":"الهندسة"},"audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"numberOfItems":21,"isBasedOn":{"@type":"CreativeWork","name":"حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني (نسمو)","publisher":{"@type":"Organization","name":"موهبة"}},"isPartOf":{"@type":"WebSite","name":"مدرب الأولمبياد","url":"https://aj5749843-cmd.github.io/olympiad-coach/"},"dateModified":"2026-11-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"مدرب الأولمبياد","item":"https://aj5749843-cmd.github.io/olympiad-coach/"},{"@type":"ListItem","position":2,"name":"المواضيع","item":"https://aj5749843-cmd.github.io/olympiad-coach/topics/"},{"@type":"ListItem","position":3,"name":"تطابق المثلثات","item":"https://aj5749843-cmd.github.io/olympiad-coach/topics/triangle-congruence.html"}]}</script>
+</head>
+<body>
+<header class="bar"><div class="wrap"><a class="logo" href="../"><i aria-hidden="true"></i>مدرب الأولمبياد</a><a href="./">كل المواضيع</a></div></header>
+<div class="hero"><div class="wrap">
+<nav class="crumbs" aria-label="مسار التنقل"><a href="../">مدرب الأولمبياد</a> › <a href="./">المواضيع</a> › الهندسة</nav>
+<h1>تمارين أولمبياد: تطابق المثلثات</h1>
+<ul class="meta"><li>الهندسة</li><li>حقيبة رياضيات 2 (كبار)</li><li>21 تمريناً</li><li>المرحلة المتوسطة</li></ul>
+<p style="margin:16px 0 0"><a class="cta" href="../?s=geo-cong">ابدأ التدريب على هذا الموضوع</a></p>
+</div></div>
+<main><div class="wrap">
+<section><h2>عن الموضوع</h2><p>يتناول تطابق المثلثات وحالاته: ضلع ضلع ضلع، وضلع زاوية ضلع، وزاوية ضلع زاوية، ووتر وضلع في المثلث القائم، واستخدام التطابق لإثبات تساوي أطوال وزوايا. وهو من موضوعات حقيبة رياضيات 2 (الكبار).</p>
+<p>في المنصة 21 تمريناً في هذا الموضوع: 0 في المستوى الأول، و21 في الثاني، و0 تحدياً في الثالث. يحل الطالب على السبورة، ويطلب تلميحاً عند الحاجة، ويُتحقق من إجابته فوراً.</p></section>
+<section><h2>أفكار وطرق تتدرب عليها</h2><ul class="chips"><li>التطابق بضلعين وزاوية محصورة (SAS)</li><li>حالات التطابق: SAS و ASA و SSS و HS</li><li>التطابق: زاوية مشتركة</li><li>الوتر وضلع (HS)</li><li>تطابق مثلثين</li><li>تطابق بضلعين وزاوية محصورة</li><li>رسم موازٍ مساعد</li></ul></section>
+<section><h2>أمثلة من الحقيبة</h2>
+<div class="ex">
+<h3>زاويتان متطابقتان</h3><div class="lv">المستوى 2 · تطابق مثلثين</div>
+<p>على الشكل: إذا كان <bdi class="m">ES = DT</bdi> و <bdi class="m">∠1 = ∠2 = ∠3</bdi>، فأثبت أن <bdi class="m">∠4 ≅ ∠5</bdi>.</p>
+
+
+<figure class="fig"><svg viewBox="47 496 236 136"><path class="s" d="M84 519L262 519"/><path class="s" d="M68 606L236 606"/><path class="s" d="M84 519L68 606"/><path class="s" d="M84 519L98 606"/><path class="s" d="M84 519L236 606"/><path class="s" d="M262 519L236 606"/><path class="s" d="M98 606L262 519"/><text x="78" y="515" font-size="13" text-anchor="middle">H</text><text x="268" y="517" font-size="13" text-anchor="middle">T</text><text x="62" y="616" font-size="13" text-anchor="middle">E</text><text x="98" y="618" font-size="13" text-anchor="middle">D</text><text x="242" y="616" font-size="13" text-anchor="middle">S</text><text x="75" y="600" font-size="10" text-anchor="middle">1</text><text x="91" y="600" font-size="10" text-anchor="middle">2</text><text x="105" y="597" font-size="10" text-anchor="middle">3</text><text x="222" y="600" font-size="10" text-anchor="middle">4</text><text x="254" y="532" font-size="10" text-anchor="middle">5</text></svg></figure>
+<p class="src">المصدر: حقيبة رياضيات كبار – المرحلة الأولى · ص 46 · تدريب 18</p>
+</div>
+<div class="ex">
+<h3>منتصف قطعتين</h3><div class="lv">المستوى 2 · التطابق بضلعين وزاوية محصورة (SAS)</div>
+<p>في الشكل: M منتصف القطعة AD، وكذلك منتصف القطعة BC. أثبت أن: أولاً <bdi class="m">AB = CD</bdi>، ثانياً <bdi class="m">AB ∥ CD</bdi>.</p>
+
+
+<figure class="fig"><svg viewBox="72 948 211 149"><path class="s" d="M230 970L131 1075"/><path class="s" d="M91 1007L262 1043"/><path class="s" d="M230 970L262 1043"/><path class="s" d="M91 1007L131 1075"/><path class="s" d="M136.2 1013.5L133.0 1025.1"/><path class="s" d="M141.0 1014.9L137.8 1026.5"/><path class="s" d="M220.8 1031.7L219.3 1043.6"/><path class="s" d="M225.7 1032.4L224.2 1044.3"/><path class="s" d="M211.3 1005.1L201.7 997.9"/><path class="s" d="M160.8 1058.7L153.2 1049.3"/><text x="232" y="965" font-size="13" text-anchor="middle">A</text><text x="270" y="1048" font-size="13" text-anchor="middle">B</text><text x="84" y="1006" font-size="13" text-anchor="middle">C</text><text x="126" y="1084" font-size="13" text-anchor="middle">D</text><text x="184" y="1050" font-size="13" text-anchor="middle">M</text></svg></figure>
+<p class="src">المصدر: حقيبة رياضيات كبار – المرحلة الأولى · ص 42 · تدريب 1</p>
+</div>
+<div class="ex">
+<h3>أيّ مثلث يطابق ABC؟ (1)</h3><div class="lv">المستوى 2 · حالات التطابق: SAS و ASA و SSS و HS</div>
+<p>في الشكل، أوجد المثلث (إن وُجد) الذي يطابق <bdi class="m">△ABC</bdi>، وحدّد المسلّمة التي استخدمتها.</p>
+<ol type="a"><li>المثلث المطابق</li><li>مسلّمة التطابق</li></ol>
+
+<figure class="fig"><svg viewBox="597 228 171 159"><path class="s" d="M624 250L746 250L624 292Z"/><path class="s" d="M632.0 250.0L632.0 258.0L624.0 258.0"/><path class="s" d="M630.0 271.0L618.0 271.0"/><path class="s" d="M730.9 255.2A16 16 0 0 1 730.0 250.0"/><path class="s" d="M618 322L618 365L746 365Z"/><path class="s" d="M618.0 357.0L626.0 357.0L626.0 365.0"/><path class="s" d="M624.0 343.5L612.0 343.5"/><path class="s" d="M730.0 365.0A16 16 0 0 1 730.8 359.9"/><text x="616" y="246" font-size="13" text-anchor="middle">A</text><text x="754" y="254" font-size="13" text-anchor="middle">C</text><text x="616" y="300" font-size="13" text-anchor="middle">B</text><text x="612" y="322" font-size="13" text-anchor="middle">P</text><text x="610" y="372" font-size="13" text-anchor="middle">N</text><text x="754" y="369" font-size="13" text-anchor="middle">Y</text></svg></figure>
+<p class="src">المصدر: حقيبة رياضيات كبار – المرحلة الأولى · ص 45 · تدريب 1</p>
+</div>
+<p style="margin-top:18px"><a class="cta" href="../?s=geo-cong">حلّ هذه التمارين وغيرها في المنصة</a></p>
+<p class="src">الحلول والتلميحات داخل المنصة، ولا تُعرض هنا.</p></section>
+<section><h2>مواضيع أخرى في الهندسة</h2><ul class="list"><li><a href="points-lines-angles.html">النقاط والمستقيمات والزوايا<small>10 تمارين</small></a></li><li><a href="triangles.html">المثلثات<small>11 تمريناً</small></a></li><li><a href="polygons.html">المضلعات<small>تمرينان</small></a></li><li><a href="quadrilaterals.html">الرباعيات<small>8 تمارين</small></a></li></ul></section>
+</div></main>
+<footer><div class="wrap">التمارين من حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني «نسمو» المنشورة على موقع موهبة، ويُذكر مصدر كل تمرين تحته. · <a href="../">مدرب الأولمبياد</a> · <a href="./">كل المواضيع</a></div></footer>
+</body>
+</html>
