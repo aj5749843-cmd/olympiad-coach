@@ -31,7 +31,7 @@ async function rest(table, query = "", { count = false } = {}) {
   const out = [];
   for (let from = 0; ; from += 1000) {
     const r = await fetch(`${SB}/rest/v1/${table}?${query}`, {
-      headers: { apikey: KEY, ...(KEY.startsWith("eyJ") ? { Authorization: `Bearer ${KEY}` } : {}), Range: `${from}-${from + 999}`, ...(count ? { Prefer: "count=exact" } : {}) }
+      headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, Range: `${from}-${from + 999}`, ...(count ? { Prefer: "count=exact" } : {}) }
     });
     if (!r.ok) throw new Error(`${table}: ${r.status} ${await r.text()}`);
     if (count) { const cr = r.headers.get("content-range") || ""; return Number(cr.split("/")[1]) || 0; }
@@ -45,6 +45,7 @@ const now = mock?.now ? new Date(mock.now) : new Date();
 const DAY = 864e5, w1 = new Date(now - 7 * DAY), w2 = new Date(now - 14 * DAY);
 const fmt = d => d.toLocaleDateString("ar-SA-u-ca-gregory-nu-latn", { day: "numeric", month: "long", timeZone: "Asia/Riyadh" });
 
+if (KEY && KEY.startsWith("sb_publishable_")) { console.error("المفتاح في SUPABASE_SERVICE_KEY هو المفتاح العام (sb_publishable_). ضعي بدله المفتاح السري الذي يبدأ بـ sb_secret_"); process.exit(1); }
 if (!MOCK && (!KEY || !TG || !CHAT)) { console.error("ينقص سر من الأسرار: SUPABASE_SERVICE_KEY أو TELEGRAM_BOT_TOKEN أو TELEGRAM_CHAT_ID"); process.exit(1); }
 
 const rows = (await rest("progress", "select=user_id,problem_id,data,updated_at")).filter(r => PB[r.problem_id]);
