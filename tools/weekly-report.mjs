@@ -10,6 +10,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SB = process.env.SUPABASE_URL || "https://wulkwbybjeggejwfhtbc.supabase.co";
 const KEY = process.env.SUPABASE_SERVICE_KEY;
 const TG = process.env.TELEGRAM_BOT_TOKEN, CHAT = process.env.TELEGRAM_CHAT_ID;
+const GC = process.env.GOATCOUNTER_TOKEN, GC_SITE = process.env.GOATCOUNTER_SITE || "https://areej-projects.goatcounter.com";
 const MOCK = process.env.MOCK_FILE; // للتجربة فقط
 const DRY = process.env.DRY_RUN === "1";
 
@@ -73,10 +74,44 @@ const pct = v => Math.round(v * 100) + "%";
 const delta = (a, b) => b === 0 ? (a ? "جديد" : "بلا تغيير") : (a === b ? "بلا تغيير" : (a > b ? "▲ " : "▼ ") + Math.abs(Math.round((a - b) / b * 100)) + "%");
 const e = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
+// ── الزوار من GoatCounter (اختياري: يعمل إذا وُجد GOATCOUNTER_TOKEN) ──
+const day = d => d.toISOString().slice(0, 10);
+async function gcGet(p, q) {
+  if (mock) return mock.gc?.[p] ?? null;
+  const r = await fetch(`${GC_SITE}/api/v0/${p}?${new URLSearchParams(q)}`, { headers: { Authorization: `Bearer ${GC}`, "Content-Type": "application/json" } });
+  if (!r.ok) throw new Error(`goatcounter ${p}: ${r.status} ${(await r.text()).slice(0, 200)}`);
+  return r.json();
+}
+const PRETTY = [["/olympiad-coach/topics/", "صفحات المواضيع"], ["/olympiad-coach", "مدرب الأولمبياد"], ["/app", "حقيبة تحصيلي"], ["/-stem-smart-kits", "معامل STEM"], ["/masari-career-bot", "مساري"]];
+const BOTS = { "bot-masari": "مساري", "bot-nafis": "نافس", "bot-qudrat": "قدراتي" };
+const project = path => path === "/" ? "الصفحة الرئيسية" : (PRETTY.find(([p]) => path.startsWith(p)) || [null, path])[1];
+let G = null;
+if (GC || mock?.gc) {
+  try {
+    const cur = { start: day(w1), end: day(new Date(now - DAY)) }, prev = { start: day(w2), end: day(new Date(w1 - DAY)) };
+    const [tc, tp, hits, refs] = await Promise.all([gcGet("stats/total", cur), gcGet("stats/total", prev), gcGet("stats/hits", { ...cur, limit: 50 }), gcGet("stats/toprefs", { ...cur, limit: 6 })]);
+    const pages = {}, bots = {};
+    for (const h of hits?.hits || []) {
+      if (h.event || BOTS[h.path]) { if (BOTS[h.path]) bots[BOTS[h.path]] = (bots[BOTS[h.path]] || 0) + h.count; continue; }
+      const k = project(h.path); pages[k] = (pages[k] || 0) + h.count;
+    }
+    G = { now: tc?.total ?? 0, prev: tp?.total ?? 0, pages: Object.entries(pages).sort((a, b) => b[1] - a[1]).slice(0, 6),
+          refs: (refs?.stats || []).map(r => [r.name || "مباشر أو غير معروف", r.count]).sort((a, b) => b[1] - a[1]).slice(0, 5), bots };
+  } catch (err) { console.error(String(err)); G = { error: true }; }
+}
+
 const L = [];
-L.push(`<b>📊 مدرب الأولمبياد · التقرير الأسبوعي</b>`);
+L.push(`<b>📊 التقرير الأسبوعي لمشاريعك</b>`);
 L.push(`${fmt(w1)} – ${fmt(now)}`, "");
-L.push(`<b>هذا الأسبوع</b>`);
+if (G && !G.error) {
+  L.push(`<b>🌐 الزوار (كل المشاريع)</b>`);
+  L.push(`زيارات: <b>${G.now}</b> (الأسبوع الماضي ${G.prev} · ${delta(G.now, G.prev)})`);
+  if (G.pages.length) L.push(G.pages.map(([k, n]) => `• ${e(k)}: ${n}`).join("\n"));
+  if (G.refs.length) L.push(`<b>من وين جوا</b>`, G.refs.map(([k, n]) => `• ${e(k)}: ${n}`).join("\n"));
+  const b = Object.entries(G.bots); if (b.length) L.push(`<b>🤖 فتحوا البوتات من صفحاتك</b>`, b.map(([k, n]) => `• ${k}: ${n}`).join("\n"));
+  L.push("");
+} else if (G && G.error) L.push("⚠️ تعذّرت قراءة أرقام الزوار هذا الأسبوع.", "");
+L.push(`<b>📘 المنصة: الطلاب المسجلون</b>`);
 L.push(`👥 طلاب تدرّبوا: <b>${users(thisW)}</b> (الأسبوع الماضي ${users(prevW)} · ${delta(users(thisW), users(prevW))})`);
 L.push(`✏️ تمارين اشتغلوا عليها: <b>${thisW.length}</b>، منها محلولة <b>${solved(thisW)}</b>`);
 if (top.length) { L.push("", `<b>🔥 الأكثر تدريباً</b>`); top.forEach(([s, x], i) => L.push(`${i + 1}. ${e(name(s))}: تمارين ${x.n} · طلاب ${x.users.size}`)); }
