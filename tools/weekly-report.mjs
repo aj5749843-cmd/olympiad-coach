@@ -31,7 +31,7 @@ async function rest(table, query = "", { count = false } = {}) {
   const out = [];
   for (let from = 0; ; from += 1000) {
     const r = await fetch(`${SB}/rest/v1/${table}?${query}`, {
-      headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, Range: `${from}-${from + 999}`, ...(count ? { Prefer: "count=exact" } : {}) }
+      headers: { apikey: KEY, ...(KEY.startsWith("eyJ") ? { Authorization: `Bearer ${KEY}` } : {}), Range: `${from}-${from + 999}`, ...(count ? { Prefer: "count=exact" } : {}) }
     });
     if (!r.ok) throw new Error(`${table}: ${r.status} ${await r.text()}`);
     if (count) { const cr = r.headers.get("content-range") || ""; return Number(cr.split("/")[1]) || 0; }
