@@ -232,6 +232,7 @@ if (!html.includes(HEAD_MARK)) {
   html = html.replace('<meta property="og:image" content="og.png">', `<meta property="og:image" content="${BASE}og.png">`)
              .replace('<meta name="twitter:image" content="og.png">', `<meta name="twitter:image" content="${BASE}og.png">`);
   const headAdd = `${HEAD_MARK}
+<meta name="google-site-verification" content="QNWTJYmcNhZzd1kA9vB4vy_J1zhWQ7ySVqWZgHUWzao">
 <link rel="canonical" href="${BASE}">
 <meta property="og:url" content="${BASE}">
 <meta property="og:site_name" content="${SITE}">
