@@ -108,6 +108,7 @@ ${schema.map(ld).join("\n")}
 <header class="bar"><div class="wrap"><a class="logo" href="../"><i aria-hidden="true"></i>${SITE}</a><a href="./">كل المواضيع</a></div></header>
 ${body}
 <footer><div class="wrap">التمارين من حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني «نسمو» المنشورة على موقع موهبة، ويُذكر مصدر كل تمرين تحته. · <a href="../">${SITE}</a> · <a href="./">كل المواضيع</a></div></footer>
+<script data-goatcounter="https://areej-projects.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
 `;
@@ -256,6 +257,16 @@ if (!html.includes(LINK_MARK)) {
   if (!html.includes(anchor)) throw new Error("لم أجد مكان الرابط المباشر في index.html");
   const code = `${LINK_MARK}(function(){try{const q=new URLSearchParams(location.search).get("s");if(!q||!SUB[q])return;const sci=UOF[SUB[q].u].subj==="sci";if(sci)S.track=3;else if(S.track===3)S.track=SUB[q].t===2?2:1;else if(SUB[q].t===2)S.track=2;let v=vis().filter(p=>p.s===q);if(!v.length&&!sci){S.track=S.track===1?2:1;v=vis().filter(p=>p.s===q);}if(v.length){S.cur=(v.find(p=>!(S.p[p.id]&&S.p[p.id].solved))||v[0]).id;save();}history.replaceState(null,"",location.pathname+"#train");}catch(e){}})();\n`;
   html = html.replace(anchor, code + anchor);
+}
+const GC_MARK = "<!-- goatcounter -->";
+if (!html.includes(GC_MARK)) {
+  // عدّاد الزيارات (GoatCounter: بلا ملفات تعريف ولا بيانات شخصية)، ويعدّ أقسام المنصة (#train، #map…) كصفحات
+  const gc = `${GC_MARK}
+<script data-goatcounter="https://areej-projects.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>window.addEventListener("hashchange",function(){try{if(window.goatcounter&&goatcounter.count&&location.hash.length>1)goatcounter.count({path:location.pathname+location.hash})}catch(e){}});</script>
+`;
+  const i = html.lastIndexOf("</body>"); if (i < 0) throw new Error("لم أجد </body> في index.html");
+  html = html.slice(0, i) + gc + html.slice(i);
 }
 fs.writeFileSync(idxPath, html);
 console.log("صفحات:", made.length + 1, "· روابط في الخريطة:", urls.length, "· تمارين:", P.length);
