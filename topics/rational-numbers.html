@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تمارين أولمبياد الأعداد النسبية | مدرب الأولمبياد</title>
+<meta name="description" content="يدرّب هذا الموضوع على الكسور والأعداد النسبية: 15 تمريناً من حقائب نسمو بمستويات متدرجة وتلميحات، لطلاب المرحلة المتوسطة.">
+<link rel="canonical" href="https://aj5749843-cmd.github.io/olympiad-coach/topics/rational-numbers.html">
+<meta name="theme-color" content="#0B827E">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="مدرب الأولمبياد">
+<meta property="og:title" content="تمارين أولمبياد الأعداد النسبية | مدرب الأولمبياد">
+<meta property="og:description" content="يدرّب هذا الموضوع على الكسور والأعداد النسبية: 15 تمريناً من حقائب نسمو بمستويات متدرجة وتلميحات، لطلاب المرحلة المتوسطة.">
+<meta property="og:url" content="https://aj5749843-cmd.github.io/olympiad-coach/topics/rational-numbers.html">
+<meta property="og:image" content="https://aj5749843-cmd.github.io/olympiad-coach/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aj5749843-cmd.github.io/olympiad-coach/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Readex+Pro:wght@600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5F6;--surface:#fff;--ink:#2A3137;--muted:#69737B;--line:#DCE0E4;--tint:#E2F4F3;--brand:#0B827E;--hero:#0C8F8A;--hero-2:#19B3AD;
+--display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#14181B;--surface:#1D2327;--ink:#EEF1F3;--muted:#A2ACB4;--line:#333B42;--tint:#173836;--brand:#3CC8C1;--hero:#0A6460;--hero-2:#0F8782}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.9;font-size:17px}
+a{color:var(--brand)}.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.bar{background:var(--surface);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--brand);display:inline-block}
+.hero{background:linear-gradient(135deg,var(--hero),var(--hero-2));color:#fff;padding:36px 0 30px}
+.hero h1{font-family:var(--display);font-size:clamp(1.6rem,4.5vw,2.3rem);line-height:1.4;margin:6px 0 10px}
+.crumbs{font-size:.88rem;opacity:.9}.crumbs a{color:#fff}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.meta li{background:rgba(255,255,255,.16);border-radius:999px;padding:2px 12px;font-size:.9rem}
+main{padding:28px 0 40px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 18px}
+h2{font-family:var(--display);font-size:1.25rem;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--tint);border-radius:999px;padding:2px 12px;font-size:.92rem}
+.ex{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.ex:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.ex h3{font-family:var(--display);font-size:1.08rem;margin:0 0 4px}
+.lv{font-size:.85rem;color:var(--muted)}
+.ex ol,.ex ul{margin:6px 0;padding-inline-start:26px}
+.src{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.m{font-family:var(--mono);direction:ltr;unicode-bidi:isolate;font-size:.94em}
+table.ftbl{border-collapse:collapse;margin:6px auto;font-family:var(--mono)}
+table.ftbl td,table.ftbl th{border:1.5px solid currentColor;min-width:22px;height:28px;padding:2px 6px;text-align:center;font-size:.9rem}
+table.ftbl.arith td{border:0;font-size:1.15rem;font-weight:700}table.ftbl.arith tr:nth-child(3) td{border-bottom:2px solid currentColor}
+.fig{margin:12px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;place-items:center;overflow-x:auto}
+.fig svg{width:min(100%,300px);height:auto;direction:ltr}
+.fig .s{stroke:var(--ink);stroke-width:2;fill:none}.fig .s.a{stroke:var(--brand)}
+.fig .c{fill:var(--brand);fill-opacity:.1;stroke:var(--brand);stroke-width:2}
+.fig text{fill:var(--ink);font-family:var(--mono);font-size:14px;font-weight:600}.fig .dot{fill:var(--ink)}.fig .grid{stroke:var(--line);stroke-width:1;fill:none}
+.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;padding:12px 26px;border-radius:12px;margin-top:6px}
+.hero .cta{background:#fff;color:var(--hero)}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.list a{display:block;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+.list small{display:block;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:22px 0;font-size:.9rem;color:var(--muted)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"تمارين أولمبياد: الأعداد النسبية","description":"يدرّب هذا الموضوع على الكسور والأعداد النسبية: العمليات عليها وترتيبها، وتحويل الأعداد العشرية الدورية إلى كسور، والمجاميع المتلاشية. وتطلب مسائل الأولمبياد فيه تفكيراً في الأنماط المتكررة والاستدلال على صحة الادعاءات، لا مجرد الحساب.","url":"https://aj5749843-cmd.github.io/olympiad-coach/topics/rational-numbers.html","inLanguage":"ar","learningResourceType":["تمارين","Practice problems"],"educationalLevel":"المرحلة المتوسطة","teaches":["الأعداد النسبية","الضرب في 10 ثم الطرح","الضرب في 100 ثم الطرح","توحيد المقامات والضرب في المقلوب","الطريقة السريعة: التسعات","تعريف القسمة","متوسط عددين يقع بينهما"],"about":{"@type":"Thing","name":"الجبر"},"audience":{"@type":"EducationalAudience","educationalRole":"student"},"isAccessibleForFree":true,"numberOfItems":15,"isBasedOn":{"@type":"CreativeWork","name":"حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني (نسمو)","publisher":{"@type":"Organization","name":"موهبة"}},"isPartOf":{"@type":"WebSite","name":"مدرب الأولمبياد","url":"https://aj5749843-cmd.github.io/olympiad-coach/"},"dateModified":"2026-11-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"مدرب الأولمبياد","item":"https://aj5749843-cmd.github.io/olympiad-coach/"},{"@type":"ListItem","position":2,"name":"المواضيع","item":"https://aj5749843-cmd.github.io/olympiad-coach/topics/"},{"@type":"ListItem","position":3,"name":"الأعداد النسبية","item":"https://aj5749843-cmd.github.io/olympiad-coach/topics/rational-numbers.html"}]}</script>
+</head>
+<body>
+<header class="bar"><div class="wrap"><a class="logo" href="../"><i aria-hidden="true"></i>مدرب الأولمبياد</a><a href="./">كل المواضيع</a></div></header>
+<div class="hero"><div class="wrap">
+<nav class="crumbs" aria-label="مسار التنقل"><a href="../">مدرب الأولمبياد</a> › <a href="./">المواضيع</a> › الجبر</nav>
+<h1>تمارين أولمبياد: الأعداد النسبية</h1>
+<ul class="meta"><li>الجبر</li><li>حقيبتا رياضيات 1 و2 (ناشئين وكبار)</li><li>15 تمريناً</li><li>المرحلة المتوسطة</li></ul>
+<p style="margin:16px 0 0"><a class="cta" href="../?s=alg-rat">ابدأ التدريب على هذا الموضوع</a></p>
+</div></div>
+<main><div class="wrap">
+<section><h2>عن الموضوع</h2><p>يدرّب هذا الموضوع على الكسور والأعداد النسبية: العمليات عليها وترتيبها، وتحويل الأعداد العشرية الدورية إلى كسور، والمجاميع المتلاشية. وتطلب مسائل الأولمبياد فيه تفكيراً في الأنماط المتكررة والاستدلال على صحة الادعاءات، لا مجرد الحساب.</p>
+<p>في المنصة 15 تمريناً في هذا الموضوع: 1 في المستوى الأول، و6 في الثاني، و8 تحدياً في الثالث. يحل الطالب على السبورة، ويطلب تلميحاً عند الحاجة، ويُتحقق من إجابته فوراً.</p></section>
+<section><h2>أفكار وطرق تتدرب عليها</h2><ul class="chips"><li>الضرب في 10 ثم الطرح</li><li>الضرب في 100 ثم الطرح</li><li>توحيد المقامات والضرب في المقلوب</li><li>الطريقة السريعة: التسعات</li><li>تعريف القسمة</li><li>متوسط عددين يقع بينهما</li><li>التحويل إلى كسور عشرية</li><li>توحيد المقامات</li><li>إيجاد العدد المجهول أولاً</li><li>كسر من نصف</li><li>حذف الحدود المتقابلة</li><li>حذف البسط مع المقام</li></ul></section>
+<section><h2>أمثلة من الحقيبة</h2>
+<div class="ex">
+<h3>عدد دوري بسيط</h3><div class="lv">المستوى 1 · الضرب في 10 ثم الطرح</div>
+<p>اكتب العدد الدوري <bdi class="m">0.7̅</bdi> (أي 0.7777…) على صورة عدد نسبي.</p>
+
+
+
+<p class="src">المصدر: حقيبة رياضيات ناشئين – المرحلة الأولى · ص 16 · مثال</p>
+</div>
+<div class="ex">
+<h3>ترتيب تصاعدي</h3><div class="lv">المستوى 2 · التحويل إلى كسور عشرية</div>
+<p>رتّب الأعداد الآتية ترتيباً تصاعدياً: <bdi class="m">−0.3 , −0.23 , −1/3</bdi></p>
+
+<ul><li>−1/3 ، −0.3 ، −0.23</li><li>−0.23 ، −0.3 ، −1/3</li><li>−0.3 ، −1/3 ، −0.23</li><li>−1/3 ، −0.23 ، −0.3</li></ul>
+
+<p class="src">المصدر: حقيبة رياضيات ناشئين – المرحلة الأولى · ص 18 · تدريب 5</p>
+</div>
+<div class="ex">
+<h3>ضرب متلاشٍ</h3><div class="lv">المستوى 3 · تحدٍّ · حذف البسط مع المقام</div>
+<p>أوجد قيمة: <bdi class="m">1/2 · 2/3 · 3/4 · 4/5 ⋯ 79/80</bdi></p>
+
+
+
+<p class="src">المصدر: حقيبة رياضيات ناشئين – المرحلة الأولى · ص 19 · تحدٍّ 5</p>
+</div>
+<p style="margin-top:18px"><a class="cta" href="../?s=alg-rat">حلّ هذه التمارين وغيرها في المنصة</a></p>
+<p class="src">الحلول والتلميحات داخل المنصة، ولا تُعرض هنا.</p></section>
+<section><h2>مواضيع أخرى في الجبر</h2><ul class="list"><li><a href="integers.html">الأعداد الصحيحة وخواصها<small>12 تمريناً</small></a></li><li><a href="linear-equations.html">المعادلات الخطية بمتغير واحد<small>17 تمريناً</small></a></li></ul></section>
+</div></main>
+<footer><div class="wrap">التمارين من حقائب المرحلة الأولى لأولمبياد العلوم والرياضيات الوطني «نسمو» المنشورة على موقع موهبة، ويُذكر مصدر كل تمرين تحته. · <a href="../">مدرب الأولمبياد</a> · <a href="./">كل المواضيع</a></div></footer>
+</body>
+</html>

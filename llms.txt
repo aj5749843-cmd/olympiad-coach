@@ -1,0 +1,50 @@
+# مدرب الأولمبياد · رياضيات وعلوم
+
+> منصة مجانية باللغة العربية لتدريب طلاب المرحلة المتوسطة في السعودية على أولمبياد العلوم والرياضيات الوطني «نسمو». فيها 273 تمريناً مأخوذة من حقائب المرحلة الأولى المنشورة على موقع موهبة (رياضيات 1 للناشئين، ورياضيات 2 للكبار، والعلوم)، مع ذكر مصدر كل تمرين.
+
+- يحل الطالب المسألة على سبورة، ويطلب تلميحات متدرجة، ويُتحقق من إجابته فوراً، ويتابع تقدمه في خريطة مهارات.
+- يمكن التدريب ضيفاً دون تسجيل، أو الدخول بالإيميل لحفظ التقدم.
+- يستطيع المعلم متابعة تقدم طلابه بعد موافقتهم، وتنزيله ملف CSV.
+- مجانية ومتاحة على: https://aj5749843-cmd.github.io/olympiad-coach/
+
+## المنصة
+- [مدرب الأولمبياد](https://aj5749843-cmd.github.io/olympiad-coach/): المنصة نفسها
+- [كل المواضيع](https://aj5749843-cmd.github.io/olympiad-coach/topics/): فهرس المواضيع 24
+
+## الجبر
+- [الأعداد الصحيحة وخواصها](https://aj5749843-cmd.github.io/olympiad-coach/topics/integers.html): يتناول هذا الموضوع العمليات على الأعداد الصحيحة الموجبة والسالبة: (12 تمريناً)
+- [الأعداد النسبية](https://aj5749843-cmd.github.io/olympiad-coach/topics/rational-numbers.html): يدرّب هذا الموضوع على الكسور والأعداد النسبية: (15 تمريناً)
+- [المعادلات الخطية بمتغير واحد](https://aj5749843-cmd.github.io/olympiad-coach/topics/linear-equations.html): يتناول حل المعادلات الخطية بمتغير واحد، وتحويل المسائل اللفظية إلى معادلات، ومسائل الأعمار والنسب والمتوسطات. (17 تمريناً)
+
+## الهندسة
+- [النقاط والمستقيمات والزوايا](https://aj5749843-cmd.github.io/olympiad-coach/topics/points-lines-angles.html): يغطي النقاط والمستقيمات والزوايا: (10 تمارين)
+- [المثلثات](https://aj5749843-cmd.github.io/olympiad-coach/topics/triangles.html): يتناول المثلثات وخواصها: (11 تمريناً)
+- [المضلعات](https://aj5749843-cmd.github.io/olympiad-coach/topics/polygons.html): يدرّب على المضلعات: (تمرينان)
+- [الرباعيات](https://aj5749843-cmd.github.io/olympiad-coach/topics/quadrilaterals.html): يتناول الأشكال الرباعية والخماسية: (8 تمارين)
+- [تطابق المثلثات](https://aj5749843-cmd.github.io/olympiad-coach/topics/triangle-congruence.html): يتناول تطابق المثلثات وحالاته: (21 تمريناً)
+
+## نظرية الأعداد
+- [قابلية القسمة والتحليل إلى العوامل الأولية](https://aj5749843-cmd.github.io/olympiad-coach/topics/divisibility-prime-factorization.html): يتناول قابلية القسمة وقواعدها، والأعداد الأولية، وتحليل العدد إلى عوامله الأولية، والقواسم، ومعها مسائل على الكسور والنسب المئوية والمتوسطات. (20 تمريناً)
+
+## التراكيب
+- [العد باستخدام أشكال فن](https://aj5749843-cmd.github.io/olympiad-coach/topics/venn-diagrams-counting.html): يدرّب على العد باستخدام أشكال فن: (6 تمارين)
+- [عد قائمة من الأعداد](https://aj5749843-cmd.github.io/olympiad-coach/topics/counting-lists.html): يتناول عدّ قائمة من الأعداد: (12 تمريناً)
+- [مبادئ العد الأساسية](https://aj5749843-cmd.github.io/olympiad-coach/topics/counting-principles.html): يتناول مبادئ العد الأساسية: (14 تمريناً)
+
+## الفيزياء
+- [الفيزياء وطبيعتها والقياس](https://aj5749843-cmd.github.io/olympiad-coach/topics/physics-measurement.html): يتناول طبيعة علم الفيزياء والقياس: (18 تمريناً)
+- [الموائع: الكثافة والضغط والطفو](https://aj5749843-cmd.github.io/olympiad-coach/topics/fluids-density-pressure-buoyancy.html): يتناول الموائع: (19 تمريناً)
+- [الحركة في بعد واحد](https://aj5749843-cmd.github.io/olympiad-coach/topics/motion-one-dimension.html): يتناول الحركة في بعد واحد: (24 تمريناً)
+
+## الكيمياء
+- [البنية الذرية](https://aj5749843-cmd.github.io/olympiad-coach/topics/atomic-structure.html): يتناول البنية الذرية وقوانين الاتحاد الكيميائي: (5 تمارين)
+- [الجدول الدوري وتصنيف العناصر](https://aj5749843-cmd.github.io/olympiad-coach/topics/periodic-table.html): يتناول الجدول الدوري وتصنيف العناصر: (تمرينان)
+- [الروابط الأيونية والفلزية](https://aj5749843-cmd.github.io/olympiad-coach/topics/ionic-metallic-bonds.html): يتناول الروابط الأيونية: (4 تمارين)
+- [الروابط والمركبات التساهمية](https://aj5749843-cmd.github.io/olympiad-coach/topics/covalent-bonds.html): يتناول الروابط والمركبات التساهمية: (3 تمارين)
+
+## الأحياء
+- [تركيب الخلية ووظيفتها](https://aj5749843-cmd.github.io/olympiad-coach/topics/cell-structure-function.html): يتناول تركيب الخلية ووظيفتها: (13 تمريناً)
+- [كيمياء الخلية](https://aj5749843-cmd.github.io/olympiad-coach/topics/cell-chemistry.html): يتناول كيمياء الخلية: (تمرينان)
+- [الطاقة الخلوية](https://aj5749843-cmd.github.io/olympiad-coach/topics/cellular-energy.html): يتناول الطاقة الخلوية: (10 تمارين)
+- [الانقسام الخلوي](https://aj5749843-cmd.github.io/olympiad-coach/topics/cell-division.html): يتناول الانقسام الخلوي: (8 تمارين)
+- [علم البيئة](https://aj5749843-cmd.github.io/olympiad-coach/topics/ecology.html): يتناول علم البيئة: (17 تمريناً)
